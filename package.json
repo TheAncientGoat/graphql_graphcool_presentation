@@ -1,0 +1,33 @@
+{
+  "name": "graphql_presentation",
+  "version": "0.0.1",
+  "description": "A presentation built with react-presents and apollo",
+  "main": "index.js",
+  "author": "Ryan Swart",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-addons-shallow-compare": "^15.5.2",
+    "react-apollo": "^1.4.1",
+    "react-dom": "^15.5.4",
+    "react-presents": "^0.7.7",
+    "react-scripts": "^1.0.7",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",                                                   
+    "build": "react-scripts build",                                                     
+    "test": "react-scripts test --env=jsdom",                                           
+    "eject": "react-scripts eject",                                                     
+    "prettier": "prettier-eslint --write \"src/**/*.+(js|jsx)\"",                       
+    "prettier-dry-run": "prettier-eslint \"src/**/*.+(js|jsx)\" -l debug"               
+  }                                                                                     
+}
+
