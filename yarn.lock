@@ -1313,7 +1313,7 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-classnames@^2.2.3, classnames@^2.2.4:
+classnames@^2.2.3, classnames@^2.2.4, classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -1377,7 +1377,14 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codemirror@^5.13.4, codemirror@^5.18.0:
+codemirror-graphql@^0.6.4:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/codemirror-graphql/-/codemirror-graphql-0.6.6.tgz#6fb696d419a2f5f54748b9b015a4bbb4ccfba22d"
+  dependencies:
+    graphql-language-service-interface "0.0.16"
+    graphql-language-service-parser "^0.0.14"
+
+codemirror@^5.13.4, codemirror@^5.18.0, codemirror@^5.25.2:
   version "5.26.0"
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.26.0.tgz#bcbee86816ed123870c260461c2b5c40b68746e5"
 
@@ -1427,7 +1434,7 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@~2.9.0, commander@2.9.x:
+commander@^2.9.0, commander@~2.9.0, commander@2.9.x:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
   dependencies:
@@ -2487,6 +2494,16 @@ fbjs@^0.8.4, fbjs@^0.8.5, fbjs@^0.8.7, fbjs@^0.8.9:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
+fetch-graphql-schema@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/fetch-graphql-schema/-/fetch-graphql-schema-0.2.1.tgz#e9900a068135faa2c70409d286a1658be9e7a0af"
+  dependencies:
+    chalk "^1.1.3"
+    graphql "^0.8.0"
+    meow "^3.7.0"
+    mkdirp "^0.5.1"
+    node-fetch "^1.6.3"
+
 figures@^1.3.5:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/figures/-/figures-1.7.0.tgz#cbe1e3affcf1cd44b80cadfed28dc793a9701d2e"
@@ -2787,6 +2804,50 @@ graphql-anywhere@^3.0.0, graphql-anywhere@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-3.0.1.tgz#73531db861174c8f212eafb9f8e84944b38b4e5a"
 
+graphql-fetch-schema@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/graphql-fetch-schema/-/graphql-fetch-schema-0.6.0.tgz#dde55d5f2067956549e0ec8b2798a7ee210d8895"
+  dependencies:
+    babel-runtime "^6.22.0"
+    commander "^2.9.0"
+    graphql "^0.10.0"
+    node-fetch "^1.7.0"
+
+graphql-language-service-config@0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/graphql-language-service-config/-/graphql-language-service-config-0.0.15.tgz#12b91d6adf45dfdbe45b54e9ad66eaa7a5b533a1"
+  dependencies:
+    graphql-language-service-types "0.0.20"
+
+graphql-language-service-interface@0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/graphql-language-service-interface/-/graphql-language-service-interface-0.0.16.tgz#36f3e0640dd58be1a5c0b5cded47870a065635ec"
+  dependencies:
+    graphql "^0.10.1"
+    graphql-language-service-config "0.0.15"
+    graphql-language-service-parser "0.0.14"
+    graphql-language-service-types "0.0.20"
+    graphql-language-service-utils "0.0.15"
+
+graphql-language-service-parser@^0.0.14, graphql-language-service-parser@0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/graphql-language-service-parser/-/graphql-language-service-parser-0.0.14.tgz#70353f776cfaf5d30e110c4edd70d3eb98a4d062"
+  dependencies:
+    graphql-language-service-types "0.0.20"
+
+graphql-language-service-types@0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/graphql-language-service-types/-/graphql-language-service-types-0.0.20.tgz#57514fd81ed580c7450ea582605eeedc6ee3fc55"
+  dependencies:
+    graphql "^0.10.1"
+
+graphql-language-service-utils@0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/graphql-language-service-utils/-/graphql-language-service-utils-0.0.15.tgz#3541dd467be9ba4f516c2fc68a4b13c74d4fe952"
+  dependencies:
+    graphql "^0.10.1"
+    graphql-language-service-types "0.0.20"
+
 graphql-subscriptions@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/graphql-subscriptions/-/graphql-subscriptions-0.3.1.tgz#0cedc2d507420cf26cf414080b079f05402f0303"
@@ -2797,11 +2858,17 @@ graphql-tag@^2.0.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.2.1.tgz#1da61feb6c6fc119ee8c579c4de424d389bee0c2"
 
-graphql@^0.10.0:
+graphql@^0.10.0, graphql@^0.10.1:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.10.1.tgz#75c93c2ce73aeb5bae2eefb555a8e9e39c36027d"
   dependencies:
     iterall "^1.1.0"
+
+graphql@^0.8.0:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.8.2.tgz#eb1bb524b38104bbf2c9157f9abc67db2feba7d2"
+  dependencies:
+    iterall "1.0.2"
 
 graphql@^0.9.3:
   version "0.9.6"
@@ -3452,6 +3519,10 @@ iterall@^1.0.0, iterall@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.1.1.tgz#f7f0af11e9a04ec6426260f5019d9fcca4d50214"
 
+iterall@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.0.2.tgz#41a2e96ce9eda5e61c767ee5dc312373bb046e91"
+
 jest-changed-files@^20.0.3:
   version "20.0.3"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-20.0.3.tgz#9394d5cc65c438406149bef1bf4d52b68e03e3f8"
@@ -3952,7 +4023,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, "lodash@>=3.5 <5":
+lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, "lodash@>=3.5 <5":
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -4181,7 +4252,7 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-node-fetch@^1.0.1:
+node-fetch@^1.0.1, node-fetch@^1.6.3, node-fetch@^1.7.0:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.1.tgz#899cb3d0a3c92f952c47f1b876f4c8aeabd400d5"
   dependencies:
@@ -5129,6 +5200,12 @@ react-dom:
     object-assign "^4.1.0"
     prop-types "^15.5.6"
 
+react-drawer:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/react-drawer/-/react-drawer-1.2.5.tgz#2e4d9e8804216b37204875a922caa7b39a031ae7"
+  dependencies:
+    classnames "^2.2.5"
+
 react-error-overlay@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-1.0.7.tgz#8712fe40cfc194ce992a4136c091c03bfada9148"
@@ -5147,7 +5224,11 @@ react-input-autosize@^1.1.3:
     create-react-class "^15.5.2"
     prop-types "^15.5.8"
 
-react-presents@0.7.8:
+react-json-view@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/react-json-view/-/react-json-view-1.8.3.tgz#4b0737f5a8c9806fe8911174fe64e45253c2ac39"
+
+react-presents@^0.7.8:
   version "0.7.8"
   resolved "https://registry.yarnpkg.com/react-presents/-/react-presents-0.7.8.tgz#4d9ffc7af0142f97b43f0eb68d3f0fb46900e82f"
   dependencies:

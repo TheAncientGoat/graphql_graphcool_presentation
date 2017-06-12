@@ -19,7 +19,7 @@ class HintableCodeMirror extends React.Component {
   autoComplete(cm) {
     const codeMirror = this.codeMirror.getCodeMirrorInstance()
     const hintOptions = {
-      schema: window.loadedSchema,
+      schema: this.props.schema,
     }
     codeMirror.showHint(cm, codeMirror.hint.sql, hintOptions)
   }

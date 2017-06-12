@@ -1,44 +1,51 @@
 import React from 'react'
 import { ContentSlide, Step } from 'react-presents'
 
-import ReactJson from 'react-json-view'
+import Drawer from 'rc-drawer'
+import 'rc-drawer/assets/index.css'
 
-import { rawMutation } from '../utils'
-import HintableCodeMirror from './hintable_codemirror'
-import config from '../config'
+import GQLPlayground from './graphql_query_playground'
+import SlideEditor from './graphql_slide_editor'
 
 class DynamicSlide extends React.Component {
   constructor() {
     super()
-    this.state = { queryResult: {} }
+    this.state = {
+      open: false,
+    }
+    this.handleClose = this.handleClose.bind(this)
+    this.handleOpen = this.handleOpen.bind(this)
   }
 
-  mutate(mutation) {
-    rawMutation(this.state.apiUri || config.apiUri, mutation)
-      .then(queryResult => this.setState({ queryResult }))
+  handleOpen() {
+    this.setState({ open: true })
+  }
+
+  handleClose() {
+    this.setState({ open: false })
   }
 
   render() {
-    const { id, title, code, content, image, steps = [] } = this.props
+    const { id, title, code, endpoint, content, image, imageStyle, links, steps = [] } = this.props
     return (
-      <ContentSlide>
-        <h1>{title}</h1>
-        {image ? <img src={image} alt={title} /> : ''}
-        {content}
-        {steps ?
-         steps.map((step, i) => <Step index={i} key={`${step}`}><li>{step}</li></Step>) : ''}
-        {code
-         ? <div style={{ display: 'flex', flexBasis: 'fill', width: '100%', flexDirection: 'row' }}>
-           <div style={{ flex: 1 }}>
-             <HintableCodeMirror code={code} id={id} />
-           </div>
-
-           <div style={{ flex: 1 }}>
-             <ReactJson src={this.state.queryResult} />
-           </div>
-         </div> : ''}
-        <button onClick={() => this.mutate(window.codeCache)}> Run Code </button>
-      </ContentSlide>
+      <Drawer
+        sidebar={<SlideEditor slide={this.props} handleClose={this.handleClose} />}
+        {...{ position: 'bottom' }}
+        open={this.state.open}
+        style={{ overflow: 'hide' }}
+      >
+        <ContentSlide>
+          <button style={{ marginBottom: '1rem' }} onClick={this.handleOpen}>Edit</button>
+          <h1>{title}</h1>
+          {image ?
+            <img src={image} style={{ maxHeight: '70vh', ...(JSON.parse(imageStyle)) }} alt={title} /> : ''}
+          <p>{content}</p>
+          { links ? links.map(link => <a href={link} key={link}>{link}</a>) : ''}
+          {steps ?
+           steps.map((step, i) => <Step index={i} key={`${step}`}><li>{step}</li></Step>) : ''}
+          {code ? <GQLPlayground {...{ code, endpoint, id }} /> : ''}
+        </ContentSlide>
+      </Drawer>
     )
   }
 }

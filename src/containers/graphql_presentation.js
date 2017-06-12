@@ -1,11 +1,11 @@
 import React from 'react'
-
+import _ from 'lodash'
 import {
 gql,
 graphql,
 } from 'react-apollo'
 
-import { Presentation, Slide } from 'react-presents'
+import { Presentation, TitleSlide, Slide } from 'react-presents'
 
 import { upsert } from '../utils'
 import DynamicSlide from '../components/graphql_slide'
@@ -26,10 +26,14 @@ subscription createSlide {
     node {
       id
       title
+      order
       content
+      endpoint
       steps
       code
       image
+      imageStyle
+      links
     }
   }
 }
@@ -47,22 +51,35 @@ const DynamicPresentation = (props) => {
   return (
     <div>
       <Presentation>
-        {props.data.allSlides.map(slide =>
+        <Slide render={() => (
+          <TitleSlide style={{ height: '100vh' }}>
+            <h1>GraphQL</h1>
+            <p>Why it is a big deal</p>
+          </TitleSlide>
+          )}
+        />
+        {_.orderBy(props.data.allSlides, ['order'], ['asc']).map(slide =>
           <Slide render={() => <DynamicSlide {...slide} />} key={slide.id} />)}
       </Presentation>
     </div>
   )
 }
 
+// Order won't update real-time! Must refresh, but it's a feature
+// as you generally want to stay on the page you edited
 
 const presentationQuery = gql`query allSlides{
-allSlides(orderBy: createdAt_ASC) {
+allSlides(orderBy: order_ASC) {
   id
+  order
   title
   content
   steps
+  endpoint
   code
   image
+  imageStyle
+  links
   }
 }
 `
