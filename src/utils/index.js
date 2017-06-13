@@ -5,7 +5,7 @@ export const rawMutation = (apiUrl, mutation) =>
         method: 'POST',
         headers: {
           'content-type': 'application/json',
-          authorization: localStorage.get('token'),
+          authorization: localStorage.getItem('token'),
         },
         body: new Blob(
           [
