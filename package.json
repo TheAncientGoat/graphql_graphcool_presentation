@@ -5,10 +5,12 @@
   "main": "index.js",
   "author": "Ryan Swart",
   "license": "MIT",
+  "homepage": "https://theancientgoat.github.io/graphql_graphcool_presentation",
   "dependencies": {
     "codemirror": "^5.25.2",
     "codemirror-graphql": "^0.6.4",
     "fetch-graphql-schema": "^0.2.1",
+    "gh-pages": "^1.0.0",
     "graphql-fetch-schema": "^0.6.0",
     "lodash": "^4.17.0",
     "rc-drawer": "^0.4.9",
@@ -17,7 +19,6 @@
     "react-apollo": "^1.4.1",
     "react-codemirror": "^0.2.6",
     "react-dom": "^15.5.4",
-    "react-drawer": "^1.2.5",
     "react-json-view": "^1.8.3",
     "react-presents": "^0.7.8",
     "react-scripts": "^1.0.7",
@@ -36,6 +37,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "prettier": "prettier-eslint --write \"src/**/*.+(js|jsx)\"",
     "prettier-dry-run": "prettier-eslint \"src/**/*.+(js|jsx)\" -l debug"
   }
