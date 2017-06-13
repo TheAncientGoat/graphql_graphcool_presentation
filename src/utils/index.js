@@ -3,7 +3,10 @@ import _ from 'lodash'
 export const rawMutation = (apiUrl, mutation) =>
       fetch(apiUrl, {
         method: 'POST',
-        headers: { 'content-type': 'application/json' },
+        headers: {
+          'content-type': 'application/json',
+          authorization: localStorage.get('token'),
+        },
         body: new Blob(
           [
             JSON.stringify({ query: mutation.replace(/\n/g, '') })],
