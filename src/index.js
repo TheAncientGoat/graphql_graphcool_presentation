@@ -19,7 +19,7 @@ const networkInterface = createNetworkInterface({
 })
 
 const wsClient = new SubscriptionClient(
-  'ws://subscriptions.graph.cool/v1/cj3hbjrxco0eq0162v003otu4',
+  'wss://subscriptions.graph.cool/v1/cj3hbjrxco0eq0162v003otu4',
   { reconnect: true })
 
 const networkInterfaceWithSubscriptions = addGraphQLSubscriptions(
